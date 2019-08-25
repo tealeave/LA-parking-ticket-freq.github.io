@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>LA_Crime_Rate_Map</title>
+    <title>LA_Parking_Exploration</title>
 
     <script src="https://unpkg.com/deck.gl@^7.0.0/dist.min.js"></script>
     <script src="https://d3js.org/d3.v5.min.js"></script>
@@ -42,6 +42,20 @@
   <body>
     <div id="control-panel">
       <div>
+        <label style="font-weight: 600; font-size: 18px">Parking Ticket Layer</label>
+        <input id="grid" type="checkbox" checked></input>
+      </div>
+      <div>
+        <label>Cell Size</label>
+        <input id="cellsize" type="range" min="20" max="200" step="5" value="60"></input>
+        <span id="cellsize-value"></span>
+      </div>
+      <div>
+        <label>Opacity</label>
+        <input id="heatmapopacity" type="range" min=".1" max="1" step=".1" value="0.7"></input>
+        <span id="heatmapopacity-value"></span>
+      </div>
+      <div style="margin-top: 10px">
         <label style="font-weight: 600; font-size: 18px">Crime Layer</label>
         <input id="hex" type="checkbox" checked></input>
       </div>
@@ -59,20 +73,6 @@
         <label>Opacity</label>
         <input id="opacity" type="range" min=".1" max="1" step=".1" value="0.6"></input>
         <span id="opacity-value"></span>
-      </div>
-      <div style="margin-top: 10px">
-        <label style="font-weight: 600; font-size: 18px">Ticket Layer</label>
-        <input id="grid" type="checkbox" checked></input>
-      </div>
-      <div>
-        <label>Cell Size</label>
-        <input id="cellsize" type="range" min="20" max="200" step="5" value="60"></input>
-        <span id="cellsize-value"></span>
-      </div>
-      <div>
-        <label>Opacity</label>
-        <input id="heatmapopacity" type="range" min=".1" max="1" step=".1" value="0.7"></input>
-        <span id="heatmapopacity-value"></span>
       </div>
     </div>
   </body>
