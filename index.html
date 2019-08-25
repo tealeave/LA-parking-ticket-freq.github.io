@@ -139,26 +139,26 @@
         ...options
       });
 
-	  const gridLayer = new ScreenGridLayer({
-	    id: 'grid',
-	    data: dataticket,
-	    colorRange: COLOR_RANGE,
-	    getPosition: d => [Number(d.long), Number(d.lat)],
-	    cellSizePixels: options['cellsize'],
-	    opacity: options['heatmapopacity']
-	  });
-
-	  var layers = [];
-	  layer_control.forEach(key => {
-        const v = document.getElementById(key).checked;
-        if (v == true & key == 'hex') {
-        	layers.push(hexagonLayer)
-        } else if (v == true & key == 'grid') {
-        	layers.push(gridLayer)
-        }
+      const gridLayer = new ScreenGridLayer({
+	id: 'grid',
+	data: dataticket,
+	colorRange: COLOR_RANGE,
+	getPosition: d => [Number(d.long), Number(d.lat)],
+	cellSizePixels: options['cellsize'],
+	opacity: options['heatmapopacity']
+      });
+ 
+      var layers = [];
+      layer_control.forEach(key => {
+         const v = document.getElementById(key).checked;
+         if (v == true & key == 'hex') {
+	   layers.push(hexagonLayer)
+         } else if (v == true & key == 'grid') {
+           layers.push(gridLayer)
+         }
       });
 
-	  deckgl.setProps({layers});
+      deckgl.setProps({layers});
     }
   </script>
 </html>
